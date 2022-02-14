@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* interval between updates (in ms) */
-const unsigned int interval = 1000;
+const unsigned int interval = 500;
 
 /* text to show if no value can be retrieved */
 static const char unknown_str[] = "n/a";
@@ -65,16 +65,13 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 		/* function format          argument */
-		{ run_command, " %s ","curl -s 'https://api.coingecko.com/api/v3/simple/price?ids=radix&vs_currencies=usd' | cut -f 3 -d ':' | cut -f 1 -d'}'"},	
-		{ run_command, "| VOL:%s ","amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]'"},
-		{ cpu_perc, "| CPU:%s%% ",NULL },
-		{ ram_perc, "| RAM:%s%% ", NULL  },
-		{ wifi_essid, "| 直 %s ", "wlp0s20f3"},
-		/* { battery_perc, "| ﮣ %2s%% ", "BAT0"}, */
-		/* { battery_state, "|  %s ", "BAT0"}, */
-		{ datetime,"|  %s ","%d %a %b"},
-		{ datetime,"|  %s ","%R"},
-		{ run_command, "| %s","battery"},
-		{ battery_perc, "%2s%% ", "BAT0"}
+                { netspeed_rx, "  %s ", "wlp0s20f0u7"},
+                { netspeed_tx, "  %s ", "wlp0s20f0u7"},
+		{ run_command, "VOL: %s  ","amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]'"},
+		{ cpu_perc, "CPU: %s%%  ",NULL },
+		{ ram_perc, "RAM: %s%%  ", NULL  },
+		{ wifi_essid, "直 %s  ", "wlp0s20f0u7"},
+		{ datetime," %s  ","%d %a %b"},
+		{ datetime," %s  ","%R"}
 
 };
