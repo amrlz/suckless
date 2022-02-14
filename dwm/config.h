@@ -10,12 +10,12 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Source Code Pro:size=12:antialiase=true", "SauceCodePro Nerd Font:style=Regular:size=12:antialise=true"};
 static const char dmenufont[]       = "Source Code Pro:style=Regular:size=12:antialiase=true";
-static const char col_gray1[]       = "#000000";
+static const char col_gray1[]       = "#d6d3ce";
 static const char col_gray2[]       = "#000000";
-static const char col_gray3[]       = "#ffffff";
-static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#070c23";
-static const unsigned int baralpha = 0;
+static const char col_gray3[]       = "#000000";
+static const char col_gray4[]       = "#000000";
+static const char col_cyan[]        = "#d6d3ce";
+static const unsigned int baralpha = 255;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -69,7 +69,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/zsh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/st", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
